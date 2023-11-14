@@ -5,6 +5,7 @@ anytree==2.8.0
 apscheduler
 aria2p
 asyncio
+beautifulsoup4
 cloudscraper
 dnspython
 feedparser
@@ -24,14 +25,13 @@ pillow
 psutil
 pybase64
 pymongo
-pyrogram
 python-dotenv
 python-magic
 qbittorrent-api
 requests
+swibots
 telegraph
 tenacity
-tgcrypto
 uvloop
 xattr
 yt-dlp

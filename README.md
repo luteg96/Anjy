@@ -1,10 +1,39 @@
-This is a Telegram Bot written in Python for mirroring files on the Internet to your Google Drive, Telegram or to any rclone supported cloud. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
+This is a Switch Bot written in Python for mirroring files on the Internet to your Google Drive, Switch or to any rclone supported cloud.
 
 # Features
 
-## By [anasty17](https://github.com/anasty17)
+### Overall
 
-In each single file there is a major change from base code, it's almost totally different. Here some of features and fixes that I remember.
+- Mirror direct download links, Torrent, Mega.nz and Switch files to Google Drive
+- Copy files from someone's Drive to your Drive
+- Download/Upload progress, Speeds and ETAs
+- Mirror all youtube-dl supported links
+- Docker support
+- Uploading to Team Drive
+- Index Link support
+- Service Account support
+- Delete files from Drive
+- Multiple Trackers support
+- Shell and Executor
+- Add sudo users
+- Docker image support for linux `amd64, arm64/v8, arm/v7`
+- Edit variables and overwrite the private files while bot running
+- Update bot at startup and with restart command using `UPSTREAM_REPO`
+- Telegraph for list and search. Based on [Sreeraj](https://github.com/SVR666) loaderX-bot
+- Mirror/Leech/Watch/Clone/Count/Del by reply
+- Mirror/Leech/Clone multi links/files with one command
+- Custom name for all links except torrents. For files you should add extension except yt-dlp links
+- Extensions Filter for the files to be uploaded/cloned for each user
+- View Link button. Extra button to open index link in broswer instead of direct download for file
+- Queueing System for all tasks
+- Ability to zip/unzip multi links in same directory. Mostly helpful in unziping tg file parts
+- Bulk download from switch txt file or text message contains links seperated by new line
+- Join splitted files that have splitted before by split(linux pkg)
+- Extract password protected files
+- Extract these filetypes
+  > ZIP, RAR, TAR, 7z, ISO, WIM, CAB, GZIP, BZIP2, APM, ARJ, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, LZH, LZMA, LZMA2, MBR, MSI, MSLZ, NSIS, NTFS, RPM, SquashFS, UDF, VHD, XAR, Z, TAR.XZ
+- Direct links Supported:
+  > mediafire, letsupload.io, hxfile.co, antfiles, fembed.com, fembed.net, femax20.com, layarkacaxxi.icu, fcdn.stream, sbplay.org, naniplay.com, naniplay.nanime.in, naniplay.nanime.biz, sbembed.com, streamtape.com, streamsb.net, feurl.com, upload.ee, pixeldrain.com, racaty.net, 1fichier.com, 1drv.ms (Only works for file not folder or business account) and solidfiles.com, linkbox.to, shrdsk.me (sharedisk.io), akmfiles.com, wetransfer.com, mdisk.me (with ytdl), terabox.com (you need to add cookies txt with name) [terabox.txt](https://github.com/ytdl-org/youtube-dl#how-do-i-pass-cookies-to-youtube-dl) and almost every anonfiles based sites
 
 ### qBittorrent
 
@@ -23,21 +52,14 @@ In each single file there is a major change from base code, it's almost totally 
 - Fix all download listener functions and status
 - Edit Global Options while bot running from bot settings
 
-### TG Upload/Download
+### Switch Upload/Download
 
-- Leech support
-- Split size for each user or task
-- Thumbnail for each user or task
+- Leech Support Upto 8 GB
+- Splitting
+- Thumbnail for each user
 - Leech filename prefix for each user. Stolen from [Juned KH](https://github.com/junedkh)
 - Set upload as document or as media for each user
-- 4GB file upload with premium account
-- Upload all files to specific superGroup/channel.
 - Leech Split size and equal split size settings for each user
-- Ability to leech splitted file parts in media group. Setting for each user
-- Download using premium account if available
-- Download restricted messages (document or link) by tg private/public/super links
-- Custom upload destination for each task or user
-- Choose leech by bot or user session incase you have premium plan
 
 ### Google
 
@@ -56,15 +78,9 @@ In each single file there is a major change from base code, it's almost totally 
 
 ### Status
 
-- Clone Status
-- Extract Status
-- Archive Status
-- Seed Status
 - Status Pages for unlimited tasks
 - Ability to cancel upload/clone/archive/extract/split
 - Cancel all buttons for choosing specific tasks status to cancel
-- Fix flooding issues
-- Fix overall upload and download speed
 
 ### Yt-dlp
 
@@ -72,7 +88,6 @@ In each single file there is a major change from base code, it's almost totally 
 - Yt-dlp quality buttons
 - Ability to use specific yt-dlp option for each task
 - Custom default yt-dlp options for each user
-- Fix download progress
 - Embed original thumbnail and add it for leech
 - All supported audio formats
 
@@ -83,7 +98,6 @@ In each single file there is a major change from base code, it's almost totally 
 - Store user settings including thumbnails, rclone config and token.pickle in database
 - Store private files
 - Store RSS data
-- Store incompleted task messages
 
 ### Torrents Search
 
@@ -93,7 +107,6 @@ In each single file there is a major change from base code, it's almost totally 
 
 ### Archives
 
-- Zip instead of tar
 - Using 7-zip tool to extract all supported types
 - Extract rar, zip and 7z within folder or splits with or without password
 - Zip file/folder with or without password
@@ -105,7 +118,6 @@ In each single file there is a major change from base code, it's almost totally 
 - Edit any feed while running: pause, resume, edit command and edit filters
 - Rss for each user with tag
 - Sudo settings to control users feeds
-- All functions have been improved using buttons from one command.
 
 ### Rclone
 
@@ -117,62 +129,16 @@ In each single file there is a major change from base code, it's almost totally 
 - Rclone serve for combine remote to use it as index from all remotes
 - Default upload destination for each user
 
-### Overall
-
-- Docker image support for linux `amd64, arm64/v8, arm/v7`
-- Switch from sync to async
-- SWitch from python-telegram-bot to pyrogram
-- Edit variables and overwrite the private files while bot running
-- Update bot at startup and with restart command using `UPSTREAM_REPO`
-- Improve Telegraph. Based on [Sreeraj](https://github.com/SVR666) loaderX-bot
-- Mirror/Leech/Watch/Clone/Count/Del by reply
-- Mirror/Leech/Clone multi links/files with one command
-- Custom name for all links except torrents. For files you should add extension except yt-dlp links
-- Extensions Filter for the files to be uploaded/cloned for each user
-- View Link button. Extra button to open index link in broswer instead of direct download for file
-- Queueing System for all tasks
-- Ability to zip/unzip multi links in same directory. Mostly helpful in unziping tg file parts
-- Bulk download from telegram txt file or text message contains links seperated by new line
-- Join splitted files that have splitted before by split(linux pkg)
-- Sample video Generator
-- Almost all repository functions have been improved and many other details can't mention all of them
-- Many bugs have been fixed
-
-## From Base and other Repositories
-
-- Mirror direct download links, Torrent, Mega.nz and Telegram files to Google Drive
-- Copy files from someone's Drive to your Drive
-- Download/Upload progress, Speeds and ETAs
-- Mirror all youtube-dl supported links
-- Docker support
-- Uploading to Team Drive
-- Index Link support
-- Service Account support
-- Delete files from Drive
-- Multiple Trackers support
-- Shell and Executor
-- Add sudo users
-- Extract password protected files
-- Extract these filetypes
-  > ZIP, RAR, TAR, 7z, ISO, WIM, CAB, GZIP, BZIP2, APM, ARJ, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, LZH, LZMA, LZMA2, MBR, MSI, MSLZ, NSIS, NTFS, RPM, SquashFS, UDF, VHD, XAR, Z, TAR.XZ
-- Direct links Supported:
-  > mediafire (file/folders), hxfile.co, streamtape.com, streamsb.net, streamhub.ink, streamvid.net, doodstream.com, feurl.com, upload.ee, pixeldrain.com, racaty.net, 1fichier.com, 1drv.ms (Only works for file not folder or business account), filelions.com, streamwish.com, send.cm (file/folders), solidfiles.com, linkbox.to (file/folders), shrdsk.me (sharedisk.io), akmfiles.com, wetransfer.com, pcloud.link, gofile.io (file/folders), easyupload.io, mdisk.me (with ytdl), terabox.com (file/folders) (you need to add cookies txt with name) [terabox.txt](https://github.com/ytdl-org/youtube-dl#how-do-i-pass-cookies-to-youtube-dl).
-
 # How to deploy?
 
 ## Prerequisites
-
-- Tutorial Video from A to Z:
-  - Thanks to [Wiszky](https://github.com/vishnoe115)
-
- <p><a href="https://youtu.be/IUmq1paCiHI"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160""/></a></p>
 
 ### 1. Installing requirements
 
 - Clone this repo:
 
 ```
-git clone https://github.com/anasty17/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
+git clone https://github.com/anasty17/mirror-leech-switch-bot mirrorbot/ && cd mirrorbot
 ```
 
 - For Debian based distros
@@ -213,30 +179,24 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 
 **1. Required Fields**
 
-- `BOT_TOKEN`: The Telegram Bot Token that you got from [@BotFather](https://t.me/BotFather). `Str`
-- `OWNER_ID`: The Telegram User ID (not username) of the Owner of the bot. `Int`
-- `TELEGRAM_API`: This is to authenticate your Telegram account for downloading Telegram files. You can get this from <https://my.telegram.org>. `Int`
-- `TELEGRAM_HASH`: This is to authenticate your Telegram account for downloading Telegram files. You can get this from <https://my.telegram.org>. `Str`
+- `BOT_TOKEN`: The Switch Bot Token that you got from [Your Profile](https://graph.org/Switch-BOT-TOKEN-11-01). `Str`
+- `OWNER_ID`: The Switch [User ID](https://graph.org/Switch-OWNER-ID-11-01) (not username) of the Owner of the bot. `Int`
 
 **2. Optional Fields**
 
-- `USER_SESSION_STRING`: To download/upload from your telegram account if user is `PREMIUM` and to send rss. To generate session string use this command `python3 generate_string_session.py` after mounting repo folder for sure. `Str`. **NOTE**: You can't use bot with private message. Use it with superGroup.
-- `DATABASE_URL`: Your Mongo Database URL (Connection string). Follow this [Generate Database](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#generate-database) to generate database. Data will be saved in Database: auth and sudo users, users settings including thumbnails for each user, rss data and incomplete tasks. **NOTE**: You can always edit all settings that saved in database from the official site -> (Browse collections). `Str`
+- `DATABASE_URL`: Your Mongo Database URL (Connection string). Follow this [Generate Database](https://github.com/anasty17/mirror-leech-switch-bot/tree/master#generate-database) to generate database. Data will be saved in Database: auth and sudo users, users settings including thumbnails for each user, rss data and incomplete tasks. **NOTE**: You can always edit all settings that saved in database from the official site -> (Browse collections). `Str`
 - `DOWNLOAD_DIR`: The path to the local folder where the downloads should be downloaded to. `Str`
-- `CMD_SUFFIX`: commands index number. This number will added at the end all commands. `Str`|`Int`
-- `AUTHORIZED_CHATS`: Fill user_id and chat_id of groups/users you want to authorize. Separate them by space. `Int`
+- `AUTHORIZED_CHATS`: Fill user_id and community_id of community/users you want to authorize. Separate them by space. `Int`
 - `SUDO_USERS`: Fill user_id of users whom you want to give sudo permission. Separate them by space. `Int`
-- `DEFAULT_UPLOAD`: Whether `rc` to upload to `RCLONE_PATH` or `gd` to upload to `GDRIVE_ID`. Default is `gd`. Read More [HERE](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#upload).`Str`
+- `DEFAULT_UPLOAD`: Whether `rc` to upload to `RCLONE_PATH` or `gd` to upload to `GDRIVE_ID`. Default is `gd`. Read More [HERE](https://github.com/anasty17/mirror-leech-switch-bot/tree/master#upload).`Str`
 - `STATUS_UPDATE_INTERVAL`: Time in seconds after which the progress/status message will be updated. Recommended `10` seconds at least. `Int`
 - `AUTO_DELETE_MESSAGE_DURATION`: Interval of time (in seconds), after which the bot deletes it's message and command message which is expected to be viewed instantly. **NOTE**: Set to `-1` to disable auto message deletion. `Int`
 - `STATUS_LIMIT`: Limit the no. of tasks shown in status message with buttons. Default is `10`. **NOTE**: Recommended limit is `4` tasks. `Int`
 - `EXTENSION_FILTER`: File extensions that won't upload/clone. Separate them by space. `Str`
-- `INCOMPLETE_TASK_NOTIFIER`: Get incomplete task messages after restart. Require database and superGroup. Default is `False`. `Bool`
-- `FILELION_API`: Filelion api key to mirror Filelion links. Get it from [Filelion](https://filelions.com/?op=my_account). `str`
-- `STREAMWISH_API`: Streamwish api key to mirror Streamwish links. Get it from [Streamwish](https://streamwish.com/?op=my_account). `str`
+- `UPTOBOX_TOKEN`: Uptobox token to mirror uptobox links. Get it from [Uptobox Premium Account](https://uptobox.com/my_account). `str`
 - `YT_DLP_OPTIONS`: Default yt-dlp options. Check all possible options [HERE](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L184) or use this [script](https://t.me/mltb_official_channel/177) to convert cli arguments to api options. Format: key:value|key:value|key:value. Add `^` before integer or float, some numbers must be numeric and some string. `str`
   - Example: "format:bv*+mergeall[vcodec=none]|nocheckcertificate:True"
-- `USE_SERVICE_ACCOUNTS`: Whether to use Service Accounts or not, with google-api-python-client. For this to work see [Using Service Accounts](https://github.com/anasty17/mirror-leech-telegram-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`. `Bool`
+- `USE_SERVICE_ACCOUNTS`: Whether to use Service Accounts or not, with google-api-python-client. For this to work see [Using Service Accounts](https://github.com/anasty17/mirror-leech-switch-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`. `Bool`
 
 ### GDrive Tools
 
@@ -257,18 +217,16 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 ### Update
 
 - `UPSTREAM_REPO`: Your github repository link, if your repo is private add `https://username:{githubtoken}@github.com/{username}/{reponame}` format. Get token from [Github settings](https://github.com/settings/tokens). So you can update your bot from filled repository on each restart. `Str`.
-  - **NOTE**: Any change in docker or requirements you need to deploy/build again with updated repo to take effect. DON'T delete .gitignore file. For more information read [THIS](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#upstream-repo-recommended).
+  - **NOTE**: Any change in docker or requirements you need to deploy/build again with updated repo to take effect. DON'T delete .gitignore file. For more information read [THIS](https://github.com/anasty17/mirror-leech-switch-bot/tree/master#upstream-repo-recommended).
 - `UPSTREAM_BRANCH`: Upstream branch for update. Default is `master`. `Str`
 
 ### Leech
 
 - `LEECH_SPLIT_SIZE`: Size of split in bytes. Default is `2GB`. Default is `4GB` if your account is premium. `Int`
-- `AS_DOCUMENT`: Default type of Telegram file upload. Default is `False` mean as media. `Bool`
+- `AS_DOCUMENT`: Default type of Switch file upload. Default is `False` mean as media. `Bool`
 - `EQUAL_SPLITS`: Split files larger than **LEECH_SPLIT_SIZE** into equal parts size (Not working with zip cmd). Default is `False`. `Bool`
-- `MEDIA_GROUP`: View Uploaded splitted file parts in media group. Default is `False`. `Bool`.
-- `USER_TRANSMISSION`: Upload/Download by user session. Default is `False`. `Bool`
 - `LEECH_FILENAME_PREFIX`: Add custom word to leeched file name. `Str`
-- `LEECH_DUMP_CHAT`: Chat ID or USERNAME to where files would be uploaded. `Int`|`Str`. **NOTE**: Only available for superGroup/channel. Add `-100` before channel/superGroup id. In short don't add bot or account id!
+- `LEECH_DUMP_CHAT`: receiver id or group id where files would be uploaded. `Str`. Incase you want to add group then you must specify commiunty and group ID seperated by `|` like `community_id|group_id`.
 
 ### qBittorrent/Aria2c
 
@@ -281,13 +239,13 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 ### RSS
 
 - `RSS_DELAY`: Time in seconds for rss refresh interval. Recommended `600` second at least. Default is `600` in sec. `Int`
-- `RSS_CHAT`: Chat ID/USERNAME where rss links will be sent. If you want message to be sent to the channel then add channel id. Add `-100` before channel id. `Int`|`Str`
-  - **RSS NOTES**: `RSS_CHAT` is required, otherwise monitor will not work. You must use `USER_STRING_SESSION` --OR-- *CHANNEL*. If using channel then bot should be added in both channel and group(linked to channel) and `RSS_CHAT` is the channel id, so messages sent by the bot to channel will be forwarded to group. Otherwise with `USER_STRING_SESSION` add group id for `RSS_CHAT`. If `DATABASE_URL` not added you will miss the feeds while bot offline.
+- `RSS_CHAT`: receiver id or community and group id where rss links will be sent. `Str`. Incase you want to add group then you must specify commiunty and group ID seperated by `|` like `community_id|group_id`.
+  - **RSS NOTES**: `RSS_CHAT` is required, otherwise monitor will not work. If `DATABASE_URL` not added you will miss the feeds while bot offline.
 
 ### MEGA
 
-- `MEGA_EMAIL`: E-Mail used to sign-in on [mega.io](https://mega.io) for using premium account. `Str`
-- `MEGA_PASSWORD`: Password for [mega.io](https://mega.io) account. `Str`
+- `MEGA_EMAIL`: E-Mail used to sign-in on mega.nz for using premium account. `Str`
+- `MEGA_PASSWORD`: Password for mega.nz account. `Str`
 
 ### Queue System
 
@@ -349,7 +307,7 @@ sudo docker stop id
 
 #### Build And Run The Docker Image Using docker-compose
 
-**NOTE**: If you want to use ports other than 80 and 8080 for torrent file selection and rclone serve respectively, change it in [docker-compose.yml](https://github.com/anasty17/mirror-leech-telegram-bot/blob/master/docker-compose.yml) also.
+**NOTE**: If you want to use ports other than 80 and 8080 for torrent file selection and rclone serve respectively, change it in [docker-compose.yml](https://github.com/anasty17/mirror-leech-switch-bot/blob/master/docker-compose.yml) also.
 
 - Install docker-compose
 
@@ -387,10 +345,6 @@ sudo docker-compose start
 sudo docker-compose up
 ```
 
-- Tutorial video from Tortoolkit repo for docker-compose and checking ports
-
-<p><a href="https://youtu.be/c8_TU1sPK08"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160""/></a></p>
-
 ------
 
 #### Docker Notes
@@ -417,7 +371,7 @@ sudo docker image prune -a
 
 # Extras
 
-## Bot commands to be set in [@BotFather](https://t.me/BotFather)
+## Bot commands
 
 ```
 mirror - or /m Mirror
@@ -630,7 +584,7 @@ python3 add_to_team_drive.py -d SharedTeamDriveSrcID
 1. Go to `https://mongodb.com/` and sign-up.
 2. Create Shared Cluster.
 3. Press on `Database` under `Deployment` Header, your created cluster will be there.
-5. Press on connect, choose `Allow Access From Anywhere` and press on `Add IP Address` without editing the ip, then create user.
+5. Press on connect, choose `Allow Acces From Anywhere` and press on `Add IP Address` without editing the ip, then create user.
 6. After creating user press on `Choose a connection`, then press on `Connect your application`. Choose `Driver` **python** and `version` **3.6 or later**.
 7. Copy your `connection string` and replace `<password>` with the password of your user, then press close.
 
@@ -683,49 +637,5 @@ machine example.workers.dev password index_password
 ```
 
 Where host is the name of extractor (eg. instagram, Twitch). Multiple accounts of different hosts can be added each separated by a new line.
-
------
-
- >
-## All Thanks To Our Contributors
-<a href="https://github.com/anasty17/mirror-leech-telegram-bot/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=anasty17/mirror-leech-telegram-bot" />
-</a>
-
-## Donations
-
-<p> If you feel like showing your appreciation for this project, then how about buying me a coffee.</p>
-
-[!["Buy Me A Coffee"](https://storage.ko-fi.com/cdn/kofi2.png)](https://ko-fi.com/anasty17)
-
-Binance ID:
-
-```
-52187862
-```
-
-USDT Address:
-
-```
-TEzjjfkxLKQqndpsdpkA7jgiX7QQCL5p4f
-```
-
-Network:
-
-```
-TRC20
-```
-
-BTC Address:
-
-```
-17dkvxjqdc3yiaTs6dpjUB1TjV3tD7ScWe
-```
-
-ETH Address:
-
-```
-0xf798a8a1c72d593e16d8f3bb619ebd1a093c7309
-```
 
 -----

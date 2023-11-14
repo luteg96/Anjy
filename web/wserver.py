@@ -232,7 +232,7 @@ function s_validate() {
         </a>
       </div>
       <div class="social">
-        <a href="https://www.github.com/anasty17/mirror-leech-telegram-bot"><i class="fab fa-github"></i></a>
+        <a href="https://www.github.com/anasty17/mirror-leech-switch-bot"><i class="fab fa-github"></i></a>
         <a href="https://t.me/anas_tayyar"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
@@ -624,7 +624,7 @@ section span{
         </a>
       </div>
       <div class="social">
-        <a href="https://www.github.com/anasty17/mirror-leech-telegram-bot"><i class="fab fa-github"></i></a>
+        <a href="https://www.github.com/anasty17/mirror-leech-switch-bot"><i class="fab fa-github"></i></a>
         <a href="https://t.me/anas_tayyar"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
@@ -635,7 +635,7 @@ section span{
           <input
             type="text"
             name="pin_code"
-            placeholder="Enter the code that you have got from Telegram to access the Torrent"
+            placeholder="Enter the code that you have got from Switch to access the Torrent"
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -773,7 +773,7 @@ def set_priority(id_):
 
 @app.route('/')
 def homepage():
-    return "<h1>See mirror-leech-telegram-bot <a href='https://www.github.com/anasty17/mirror-leech-telegram-bot'>@GitHub</a> By <a href='https://github.com/anasty17'>Anas</a></h1>"
+    return "<h1>See mirror-leech-switch-bot <a href='https://www.github.com/anasty17/mirror-leech-switch-bot'>@GitHub</a> By <a href='https://github.com/anasty17'>Anas</a></h1>"
 
 @app.errorhandler(Exception)
 def page_not_found(e):
